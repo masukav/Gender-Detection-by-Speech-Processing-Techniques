@@ -1,0 +1,23 @@
+clear all;
+close all;
+clc;
+while (1==1)
+    choice=menu('Gender Detection',...
+                'Choose Database & Calculate Recognition Rate',...
+                'Recognize from audio file',...
+                'Recognize by recording',...
+                'Exit');
+    if (choice ==1)
+        open(gendata.m);
+    end
+    if (choice == 2)
+        open(gendetect.m);
+    end
+        if (choice == 3)
+                open(genderrec.m);
+        end 
+        if (choice == 4)
+        clear choice choice2
+        return;
+    end    
+end

@@ -1,0 +1,22 @@
+
+global x fs ms20 ms2 r;
+fileName='female.wav';
+[y, fs]=wavread(fileName);
+wavplay(y,16000);
+cla;
+time = length(y)/fs;
+if time == 0
+    %the first, second and third lines of the message box
+    msgboxText{1} = 'You have tried to estimate gender without recording signal';
+    msgboxText{2} = 'Try recording a signal using record button';
+    %this command actually creates the message box
+   msgbox(msgboxText,'Signal recording not done', 'warn');
+else
+    ms20 = fs/50;
+    t = (0:length(y)-1)/fs;
+    plot(t,y);
+    axes(handles.axes1) ;
+    title('Waveform');
+    xlabel('Time (s)');
+    ylabel('Amplitude');
+end
